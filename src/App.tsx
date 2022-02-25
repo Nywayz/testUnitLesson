@@ -18,14 +18,14 @@ function App() {
       )}
       {meteo && meteo.current_condition && (
         <div>
-          <p>Météo actuel</p>
+          <p>Météo actuelle</p>
           <img src={meteo.current_condition.icon_big} alt="" />
         </div>
       )}
       <div className="container calculate">
         <div className="row">
           <div className="col-6 offset-3 title">
-            <h1>calculatrice</h1>
+            <h1>Calculatrice</h1>
           </div>
         </div>
         <Calculator />

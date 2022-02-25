@@ -48,3 +48,34 @@ test("test addition fonctional", () => {
 
   expect(label.textContent).toBe(Number(12 + 12).toString());
 });
+
+test("test substraction fonctional", () => {
+  act(() => {
+    ReactDOM.render(<App />, container);
+  });
+  const button1 = container.querySelector(".touch[data-value='1']");
+  const button2 = container.querySelector(".touch[data-value='2']");
+  const buttonMinus = container.querySelector(".touch[data-value='-']");
+  const buttonEqual = container.querySelector(".touch[data-value='=']");
+  const label = container.querySelector(".result");
+  act(() => {
+    button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    buttonMinus.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    buttonEqual.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+
+  expect(label.textContent).toBe(Number(0).toString());
+});
